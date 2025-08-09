@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Ukraine - Beautiful Cities</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="javascript:void(0)" onclick="showMainContent()">
+                <i class="fas fa-map-marked-alt me-2"></i>Discover Ukraine
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cities">Cities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Reviews</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="main-content">
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Discover Ukraine's Hidden Gems</h1>
+                <p>Explore the most beautiful and culturally rich cities of Ukraine with authentic experiences</p>
+                <button class="btn btn-custom" onclick="scrollToSection('cities')">
+                    <i class="fas fa-compass me-2"></i>Start Exploring
+                </button>
+                
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="800">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="30">0</span>
+                        <span>Cities Covered</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="200">0</span>
+                        <span>Attractions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3000000">0</span>
+                        <span>Happy Visitors</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                        <h2 class="display-5 fw-bold mb-4">About Discover Ukraine</h2>
+                        <p class="lead">We are passionate travel enthusiasts dedicated to showcasing the incredible resilience, diversity and beauty of Ukrainian cities in 2025. Our mission is to help travelers discover authentic experiences, rich history, and stunning architecture that makes each Ukrainian city unique, while supporting local communities and cultural preservation.</p>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-card">
+                            <div class="feature-icon">🗺️</div>
+                            <h4>Expert Guides</h4>
+                            <p>Detailed information about each city's attractions, history, and culture with local insights</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-card">
+                            <div class="feature-icon">📸</div>
+                            <h4>Stunning Photography</h4>
+                            <p>High-quality images showcasing the beauty of Ukrainian architecture and landscapes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-card">
+                            <div class="feature-icon">💝</div>
+                            <h4>Local Insights</h4>
+                            <p>Insider tips and recommendations from locals who know these cities best</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light" id="cities">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5" data-aos="fade-up">Featured Cities</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card city-card" onclick="showCityDetail('kyiv')">
+                            <div class="city-badge">Capital</div>
+                            <img src="img/kiev/kiev.jpeg" alt="Kyiv">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-crown text-warning me-2"></i>Kyiv</h5>
+                                <p class="card-text">The golden-domed capital city, rich in history and culture with over 1500 years of heritage</p>
+                                <div class="d-flex justify-content-between text-muted small">
+                                    <span><i class="fas fa-users me-1"></i>2.9M people</span>
+                                    <span><i class="fas fa-map-marker-alt me-1"></i>Central Ukraine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="card city-card" onclick="showCityDetail('lviv')">
+                            <div class="city-badge">UNESCO</div>
+                            <img src="img/lviv/lviv.jpg" class="card-img-top" alt="Lviv">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-university text-info me-2"></i>Lviv</h5>
+                                <p class="card-text">UNESCO World Heritage site with stunning medieval architecture and vibrant café culture</p>
+                                <div class="d-flex justify-content-between text-muted small">
+                                    <span><i class="fas fa-users me-1"></i>721K people</span>
+                                    <span><i class="fas fa-map-marker-alt me-1"></i>Western Ukraine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="card city-card" onclick="showCityDetail('odesa')">
+                            <div class="city-badge">Seaport</div>
+                            <img src="img/odesa/odesa.jpg" class="card-img-top" alt="Odesa">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-anchor text-primary me-2"></i>Odesa</h5>
+                                <p class="card-text">The pearl by the sea with magnificent opera house and vibrant coastal atmosphere</p>
+                                <div class="d-flex justify-content-between text-muted small">
+                                    <span><i class="fas fa-users me-1"></i>1.01M people</span>
+                                    <span><i class="fas fa-map-marker-alt me-1"></i>Southern Ukraine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card city-card" onclick="showCityDetail('bukovel')">
+                            <div class="city-badge">Mountain Resort</div>
+                            <img src="img/bukovel/bukovel.jpg" class="card-img-top" alt="Bukovel">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-mountain text-success me-2"></i>Bukovel</h5>
+                                <p class="card-text">Ukraine's premier mountain resort with world-class skiing and stunning Carpathian views</p>
+                                <div class="d-flex justify-content-between text-muted small">
+                                    <span><i class="fas fa-skiing me-1"></i>Ski Resort</span>
+                                    <span><i class="fas fa-map-marker-alt me-1"></i>Carpathian Mountains</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                        <div class="card city-card" onclick="showCityDetail('dnipro')">
+                            <div class="city-badge">Industrial Hub</div>
+                            <img src="img/dnipro/dnipro.jpg" class="card-img-top" alt="Dnipro">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-industry text-dark me-2"></i>Dnipro</h5>
+                                <p class="card-text">Modern industrial city along the Dnieper River with impressive bridges and aerospace heritage</p>
+                                <div class="d-flex justify-content-between text-muted small">
+                                    <span><i class="fas fa-users me-1"></i>980K people</span>
+                                    <span><i class="fas fa-map-marker-alt me-1"></i>Central Ukraine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+                        <div class="card city-card coming-soon">
+                            <div class="city-badge">Coming Soon</div>
+                            <img src="keys/coming-soon?prompt=Beautiful%20Ukrainian%20city%20landscape%20with%20traditional%20architecture%20and%20nature%20coming%20soon%20placeholder" class="card-img-top" alt="Coming Soon">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-clock text-warning me-2"></i>Chernivtsi</h5>
+                                <p class="card-text">The colorful city with Austrian heritage - detailed guide coming soon!</p>
+                                <div class="d-flex justify-content-between text-muted small">
+                                    <span><i class="fas fa-hard-hat me-1"></i>In Progress</span>
+                                    <span><i class="fas fa-map-marker-alt me-1"></i>Western Ukraine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5" id="testimonials">
+            <div class="container">
+                <h2 class="display-5 fw-bold text-center mb-5" data-aos="fade-up">Recent Visitor Experiences (2025)</h2>
+                <div class="row">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-card">
+                            <h5>Sarah Mitchell</h5>
+                            <small class="text-muted">January 2025 • Lviv Market Square</small>
+                            <div class="text-warning mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p>"The reconstruction of Lviv's Market Square is incredible! Despite everything, the city maintains its magical atmosphere. The new support programs for local cafes and artisans make visiting even more meaningful."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-card">
+                            <h5>Andriy Kovalenko</h5>
+                            <small class="text-muted">March 2025 • Bukovel Resort</small>
+                            <div class="text-warning mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p>"Bukovel's winter 2025 season was exceptional! The new energy-efficient lift systems and expanded slopes made skiing better than ever. The resilience of Ukrainian hospitality shines through."</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="testimonial-card">
+                            <h5>Maria Petrenko</h5>
+                            <small class="text-muted">February 2025 • Kyiv Pechersk Lavra</small>
+                            <div class="text-warning mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p>"Visiting the restored sections of Pechersk Lavra was deeply moving. The preservation efforts and digital exhibitions provide hope and continuity. A must-see symbol of Ukrainian heritage."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="city-details-container" style="display: none;">
+        <div id="kyiv-detail" class="city-detail">
+            <div class="city-header">
+                <div class="container">
+                    <button class="btn btn-light back-btn" onclick="showMainContent()">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Cities
+                    </button>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-3 fw-bold mb-3 text-white">Kyiv</h1>
+                            <p class="lead mb-4 text-white">The Heart of Ukraine - A magnificent capital where ancient history meets modern dynamism</p>
+                            <div class="d-flex gap-3 mb-3">
+                                <span class="badge bg-warning text-dark fs-6">Capital City</span>
+                                <span class="badge bg-info fs-6">UNESCO Sites</span>
+                                <span class="badge bg-success fs-6">River Port</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="img/kiev/kiev-1.jpg" alt="Kyiv panorama">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p class="lead">Kyiv, the capital and largest city of Ukraine, is a vibrant metropolis that seamlessly blends ancient history with modern dynamism.</p>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-church text-warning me-2"></i>Saint Sophia's Cathedral</h5>
+                            <p>A UNESCO World Heritage site with stunning Byzantine architecture and golden domes, representing the pinnacle of medieval Ukrainian art.</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-landmark text-info me-2"></i>Kyiv Pechersk Lavra</h5>
+                            <p>The famous monastery complex with underground cave systems and magnificent churches, a spiritual heart of Ukraine.</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-theater-masks text-success me-2"></i>National Opera Theatre</h5>
+                            <p>World-class opera and ballet performances in a beautiful 19th-century building with rich cultural heritage.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card sticky-top" style="top: 100px;">
+                            <div class="card-header">
+                                <h5><i class="fas fa-info-circle me-2"></i>Quick Facts</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Population:</strong> 2.9 million</p>
+                                <p><strong>Founded:</strong> 482 AD</p>
+                                <p><strong>Area:</strong> 839 km²</p>
+                                <p><strong>Language:</strong> Ukrainian</p>
+                                <p><strong>Currency:</strong> Ukrainian Hryvnia</p>
+                                <p><strong>Best time to visit:</strong> May-September</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="lviv-detail" class="city-detail">
+            <div class="city-header">
+                <div class="container">
+                    <button class="btn btn-light back-btn" onclick="showMainContent()">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Cities
+                    </button>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-3 fw-bold mb-3 text-white">Lviv</h1>
+                            <p class="lead mb-4 text-white">The Cultural Capital - Medieval charm meets vibrant café culture</p>
+                            <div class="d-flex gap-3 mb-3">
+                                <span class="badge bg-warning text-dark fs-6">UNESCO Heritage</span>
+                                <span class="badge bg-info fs-6">Medieval City</span>
+                                <span class="badge bg-success fs-6">Coffee Capital</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="img/lviv/lviv-1.jpg" alt="Lviv market square">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p class="lead">Lviv is Ukraine's cultural capital, known for its well-preserved medieval architecture and vibrant café culture.</p>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-building text-warning me-2"></i>Market Square</h5>
+                            <p>The heart of Lviv with Renaissance and Baroque buildings, UNESCO World Heritage site with stunning architecture.</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-coffee text-info me-2"></i>Coffee Culture</h5>
+                            <p>Discover the legendary coffee houses and chocolate factories that make Lviv Ukraine's coffee capital.</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-theater-masks text-success me-2"></i>Opera House</h5>
+                            <p>Magnificent neo-Renaissance opera house with world-class performances in an intimate setting.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card sticky-top" style="top: 100px;">
+                            <div class="card-header">
+                                <h5><i class="fas fa-info-circle me-2"></i>Quick Facts</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Population:</strong> 721,000</p>
+                                <p><strong>Founded:</strong> 1256</p>
+                                <p><strong>Area:</strong> 182 km²</p>
+                                <p><strong>UNESCO Status:</strong> World Heritage Site</p>
+                                <p><strong>Famous for:</strong> Coffee & Chocolate</p>
+                                <p><strong>Best time to visit:</strong> April-October</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="odesa-detail" class="city-detail">
+            <div class="city-header">
+                <div class="container">
+                    <button class="btn btn-light back-btn" onclick="showMainContent()">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Cities
+                    </button>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-3 fw-bold mb-3 text-white">Odesa</h1>
+                            <p class="lead mb-4 text-white">The Pearl by the Sea - Maritime charm and architectural grandeur</p>
+                            <div class="d-flex gap-3 mb-3">
+                                <span class="badge bg-warning text-dark fs-6">Seaport</span>
+                                <span class="badge bg-info fs-6">Opera House</span>
+                                <span class="badge bg-success fs-6">Beach Resort</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="img/odesa/odesa-1.jpg" class="city-hero-img" alt="Odesa opera house">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p class="lead">Odesa is Ukraine's premier seaport city, famous for its opera house, beautiful beaches, and vibrant maritime culture.</p>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-theater-masks text-warning me-2"></i>Odesa Opera House</h5>
+                            <p>One of the most beautiful opera houses in the world, renowned for its Neo-Baroque architecture and acoustics.</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-stairs text-info me-2"></i>Potemkin Stairs</h5>
+                            <p>The famous 192-step staircase leading from the city to the port, an iconic symbol of Odesa.</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-umbrella-beach text-success me-2"></i>Black Sea Beaches</h5>
+                            <p>Beautiful sandy beaches and seaside resorts perfect for relaxation and water activities.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card sticky-top" style="top: 100px;">
+                            <div class="card-header">
+                                <h5><i class="fas fa-info-circle me-2"></i>Quick Facts</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Population:</strong> 1.01 million</p>
+                                <p><strong>Founded:</strong> 1794</p>
+                                <p><strong>Area:</strong> 237 km²</p>
+                                <p><strong>Location:</strong> Black Sea Coast</p>
+                                <p><strong>Famous for:</strong> Opera & Beaches</p>
+                                <p><strong>Best time to visit:</strong> May-September</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="bukovel-detail" class="city-detail">
+            <div class="city-header">
+                <div class="container">
+                    <button class="btn btn-light back-btn" onclick="showMainContent()">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Cities
+                    </button>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-3 fw-bold mb-3 text-white">Bukovel</h1>
+                            <p class="lead mb-4 text-white">Mountain Paradise - Ukraine's premier ski resort in the Carpathians</p>
+                            <div class="d-flex gap-3 mb-3">
+                                <span class="badge bg-warning text-dark fs-6">Ski Resort</span>
+                                <span class="badge bg-info fs-6">Mountain Resort</span>
+                                <span class="badge bg-success fs-6">Carpathians</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="img/bukovel/bukovel-1.jpg" class="city-hero-img" alt="Bukovel ski resort">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p class="lead">Bukovel is Ukraine's largest ski resort, offering world-class skiing and stunning Carpathian mountain views.</p>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-skiing text-warning me-2"></i>Ski Slopes</h5>
+                            <p>Over 60 kilometers of ski runs for all skill levels, from beginner to expert, with modern lift systems.</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-mountain text-info me-2"></i>Carpathian Views</h5>
+                            <p>Breathtaking panoramic views of the Carpathian Mountains and pristine natural landscapes.</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-spa text-success me-2"></i>Wellness & Spa</h5>
+                            <p>Luxury spa facilities and wellness centers perfect for relaxation after active mountain adventures.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card sticky-top" style="top: 100px;">
+                            <div class="card-header">
+                                <h5><i class="fas fa-info-circle me-2"></i>Quick Facts</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Elevation:</strong> 920-1372m</p>
+                                <p><strong>Established:</strong> 2003</p>
+                                <p><strong>Ski Season:</strong> December-March</p>
+                                <p><strong>Location:</strong> Carpathian Mountains</p>
+                                <p><strong>Famous for:</strong> Skiing & Mountains</p>
+                                <p><strong>Best time to visit:</strong> Winter & Summer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dnipro-detail" class="city-detail">
+            <div class="city-header">
+                <div class="container">
+                    <button class="btn btn-light back-btn" onclick="showMainContent()">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Cities
+                    </button>
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-3 fw-bold mb-3 text-white">Dnipro</h1>
+                            <p class="lead mb-4 text-white">Industrial Heart - Modern city along the mighty Dnieper River</p>
+                            <div class="d-flex gap-3 mb-3">
+                                <span class="badge bg-warning text-dark fs-6">Industrial Hub</span>
+                                <span class="badge bg-info fs-6">River City</span>
+                                <span class="badge bg-success fs-6">Aerospace</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="img/dnipro/dnipro-1.jpg" class="city-hero-img" alt="Dnipro cityscape">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p class="lead">Dnipro is Ukraine's fourth-largest city and a major industrial center along the Dnieper River.</p>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-rocket text-warning me-2"></i>Space Museum</h5>
+                            <p>Discover Ukraine's aerospace heritage and the role of Dnipro in space exploration and rocket technology.</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-bridge text-info me-2"></i>Dnieper Bridges</h5>
+                            <p>Impressive bridges spanning the mighty Dnieper River, offering spectacular city and river views.</p>
+                        </div>
+                        
+                        <div class="attraction-card">
+                            <h5><i class="fas fa-tree text-success me-2"></i>Monastyrsky Island</h5>
+                            <p>Green oasis in the city center with parks, beaches, and recreational facilities along the river.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card sticky-top" style="top: 100px;">
+                            <div class="card-header">
+                                <h5><i class="fas fa-info-circle me-2"></i>Quick Facts</h5>
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Population:</strong> 980,000</p>
+                                <p><strong>Founded:</strong> 1776</p>
+                                <p><strong>Area:</strong> 405 km²</p>
+                                <p><strong>Location:</strong> Dnieper River</p>
+                                <p><strong>Famous for:</strong> Aerospace & Industry</p>
+                                <p><strong>Best time to visit:</strong> May-September</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-map-marked-alt me-2"></i>Discover Ukraine</h5>
+                    <p>Your guide to the most beautiful cities in Ukraine. Explore, discover, and fall in love with Ukrainian culture and heritage.</p>
+                </div>
+                <div class="col-md-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white-50">Home</a></li>
+                        <li><a href="#cities" class="text-white-50">Cities</a></li>
+                        <li><a href="#about" class="text-white-50">About</a></li>
+                        <li><a href="#testimonials" class="text-white-50">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6>Contact Info</h6>
+                    <p class="text-white-50 small">
+                        <i class="fas fa-envelope me-2"></i>info@discoverukraine.com<br>
+                        <i class="fas fa-phone me-2"></i>+380 77 777 7777<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

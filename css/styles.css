@@ -1,0 +1,473 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('keys/ukraine-pattern?prompt=Ukrainian%20traditional%20ornament%20pattern%20in%20white%20transparent%20overlay') center/cover;
+    opacity: 0.1;
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: slideInDown 1s ease-out;
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    animation: slideInUp 1s ease-out 0.3s both;
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* HERO STATISTICS */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    animation: fadeIn 1s ease-out 0.6s both;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: block;
+    color: #ffd700;
+}
+
+/* BUTTONS */
+.btn-custom {
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    color: #333;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
+    50% { box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5); }
+    100% { box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
+}
+
+.btn-custom:hover {
+    background: linear-gradient(45deg, #ffed4e, #ffd700);
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+    animation: none;
+}
+
+.back-btn {
+    margin-bottom: 2rem;
+    border-radius: 25px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #333;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #333;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* CITY CARDS */
+.city-card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    height: 450px;
+    position: relative;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.city-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.city-card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.card-body {
+    position: relative;
+    z-index: 2;
+}
+
+.city-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 215, 0, 0.9);
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 3;
+}
+
+/* CITY DETAIL PAGES */
+#city-details-container {
+    display: none;
+}
+
+.city-detail {
+    display: none;
+    animation: fadeInScale 0.6s ease-in;
+}
+
+@keyframes fadeInScale {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px) scale(0.95); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+    }
+}
+
+.city-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 0 40px;
+    margin-bottom: 0;
+}
+
+.city-hero-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* FEATURE CARDS */
+.feature-icon {
+    font-size: 3.5rem;
+    color: #667eea;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2.5rem;
+    border-radius: 15px;
+    background: white;
+    height: 100%;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.feature-card:hover {
+    background: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    border-color: #667eea;
+    transform: translateY(-10px);
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.2) rotate(5deg);
+    filter: grayscale(0%);
+}
+
+/* ATTRACTION CARDS */
+.attraction-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid #667eea;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.attraction-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 0%, rgba(102, 126, 234, 0.03) 100%);
+    z-index: 1;
+}
+
+.attraction-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.attraction-card:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transform: translateX(10px);
+    border-left-color: #ffd700;
+}
+
+.attraction-card h5 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.attraction-card p {
+    color: #666;
+    margin: 0;
+}
+
+/* NAVIGATION */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(248, 249, 250, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem !important;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #667eea !important;
+}
+
+/* TESTIMONIALS */
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 1rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.testimonial-card h5 {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    color: #555;
+}
+
+/* COMING SOON */
+.coming-soon {
+    position: relative;
+    opacity: 0.8;
+}
+
+.coming-soon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(102, 126, 234, 0.1));
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.coming-soon .card-body {
+    position: relative;
+    z-index: 2;
+}
+
+.coming-soon:hover {
+    transform: none;
+    cursor: default;
+    opacity: 0.9;
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+footer h5 {
+    color: #ffd700;
+    margin-bottom: 1rem;
+}
+
+footer h6 {
+    color: #ecf0f1;
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ffd700 !important;
+}
+
+/* INFO CARDS */
+.card-header h5 {
+    margin: 0;
+    color: #667eea;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fadeIn {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.8rem; }
+    .hero p { font-size: 1.2rem; }
+    .hero-stats { 
+        flex-direction: column; 
+        gap: 1.5rem; 
+    }
+    .city-card { 
+        height: auto; 
+        margin-bottom: 2rem; 
+    }
+    .card-img-top { 
+        height: 220px; 
+    }
+    .city-hero-img {
+        height: 300px;
+        margin-top: 2rem;
+    }
+    .feature-card {
+        margin-bottom: 2rem;
+    }
+    .attraction-card {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero { 
+        padding: 80px 0; 
+    }
+    .hero h1 { 
+        font-size: 2.2rem; 
+    }
+    .hero p {
+        font-size: 1.1rem;
+    }
+    .btn-custom {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+    .city-header {
+        padding: 60px 0 30px;
+    }
+    .city-header h1 {
+        font-size: 2.5rem;
+    }
+    .feature-icon {
+        font-size: 2.5rem;
+    }
+}
